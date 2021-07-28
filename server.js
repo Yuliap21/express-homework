@@ -29,8 +29,8 @@ app.get('/tip/:total/:tipPercentage', (req, res) =>{
 
 
 app.get('/magic', (req, res) =>{
-  res.send(` <h1>  </h1>
-    'Will I be a Millionaire?'`);
+  res.send(`
+    Will I be a Millionaire?`);
 });
 
 // app.get('/magic/Will%20I%20Be%20A%20Millionaire', (req, res) =>{
@@ -38,8 +38,8 @@ app.get('/magic', (req, res) =>{
 //
 // });
 
-app.get('/:indexOfResponsesArray', (req, res) =>{
-  res.send(responses[req.params.indexOfResponsesArray]);
+app.get('/magic/:responses', (req, res) =>{
+  res.send(responses[Math.floor(Math.random() * responses.length)]);
 });
 
 app.get('/magic', (req, res) =>{
